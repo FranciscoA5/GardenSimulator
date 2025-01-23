@@ -11,7 +11,6 @@ namespace WateringCan.Scripts
         [SerializeField] private ParticleSystem sprayWaterParticles;
         [SerializeField] private ParticleSystem fullAutoWaterParticles;
        
-        private bool _isPlaying;
         public void SetNormalMode() => activeWaterParticles = normalWaterParticles;
         public void SetSprayMode() => activeWaterParticles = sprayWaterParticles;
         public void SetFullAutoWaterMode() => activeWaterParticles = fullAutoWaterParticles;
@@ -20,18 +19,16 @@ namespace WateringCan.Scripts
 
         private void Update()
         {
-            if (transform.rotation.x is > 36.0f and < 270.0f && !_isPlaying)
+            if (!activeWaterParticles.isPlaying && gameObject.transform.rotation.eulerAngles.x is > 36.0f and < 270.0f)
             {
                 StartWaterParticles();
-                Debug.Log("Starting water particles");
-                _isPlaying = true;
+                Debug.Log("Starting water particles"); 
             }
-            else
-            {
-                StopWaterParticles();
-                Debug.Log("Stopping water particles");
-                _isPlaying = false;
-            }
+
+            if (!activeWaterParticles.isPlaying ||
+                gameObject.transform.rotation.eulerAngles.x is > 36.0f and < 270.0f) return;
+            StopWaterParticles();
+            Debug.Log("Stopping water particles");
         }
     }
 }
