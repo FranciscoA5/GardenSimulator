@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 
@@ -13,7 +14,19 @@ namespace WateringCan.Scripts
         public void SetNormalMode() => activeWaterParticles = normalWaterParticles;
         public void SetSprayMode() => activeWaterParticles = sprayWaterParticles;
         public void SetFullAutoWaterMode() => activeWaterParticles = fullAutoWaterParticles;
-        public void StartWaterParticles() => activeWaterParticles.Play();
-        public void StopWaterParticles() => activeWaterParticles.Stop();
+        private void StartWaterParticles() => activeWaterParticles.Play();
+        private void StopWaterParticles() => activeWaterParticles.Stop();
+
+        private void Update()
+        {
+            if (transform.rotation.x is > 36.0f and < 270.0f)
+            {
+                StartWaterParticles();
+            }
+            else
+            {
+                StopWaterParticles();
+            }
+        }
     }
 }
