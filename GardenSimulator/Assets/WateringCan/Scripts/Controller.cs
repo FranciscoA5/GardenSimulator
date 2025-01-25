@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 
@@ -6,29 +5,42 @@ namespace WateringCan.Scripts
 {
     public class Controller : MonoBehaviour
     {
-        [SerializeField] private ParticleSystem activeWaterParticles; 
+        [SerializeField] private ParticleSystem activeWaterParticles;
         [SerializeField] private ParticleSystem normalWaterParticles;
         [SerializeField] private ParticleSystem sprayWaterParticles;
         [SerializeField] private ParticleSystem fullAutoWaterParticles;
-       
-        public void SetNormalMode() => activeWaterParticles = normalWaterParticles;
-        public void SetSprayMode() => activeWaterParticles = sprayWaterParticles;
-        public void SetFullAutoWaterMode() => activeWaterParticles = fullAutoWaterParticles;
+        [SerializeField] private float minPouringAngle = 36.0f;
+        [SerializeField] private float maxPouringAngle = 270.0f;
+
+        public void SetNormalMode() => SetWaterStreamParticles(normalWaterParticles);
+        public void SetSprayMode() => SetWaterStreamParticles(sprayWaterParticles);
+        public void SetFullAutoWaterMode() => SetWaterStreamParticles(fullAutoWaterParticles);
+
+        private void SetWaterStreamParticles(in ParticleSystem newParticles)
+        {
+            activeWaterParticles.Stop();
+            activeWaterParticles = newParticles;
+        }
+
         private void StartWaterParticles() => activeWaterParticles.Play();
         private void StopWaterParticles() => activeWaterParticles.Stop();
 
         private void Update()
         {
-            if (!activeWaterParticles.isPlaying && gameObject.transform.rotation.eulerAngles.x is > 36.0f and < 270.0f)
+            if (!activeWaterParticles.isPlaying && IsAtPouringAngle())
             {
                 StartWaterParticles();
-                Debug.Log("Starting water particles"); 
             }
 
             if (!activeWaterParticles.isPlaying ||
-                gameObject.transform.rotation.eulerAngles.x is > 36.0f and < 270.0f) return;
+                !IsAtPouringAngle()) return;
             StopWaterParticles();
-            Debug.Log("Stopping water particles");
+        }
+
+        private bool IsAtPouringAngle()
+        {
+            return gameObject.transform.rotation.eulerAngles.x > minPouringAngle &&
+                   gameObject.transform.rotation.eulerAngles.x < maxPouringAngle;
         }
     }
 }
