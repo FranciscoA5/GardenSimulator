@@ -29,18 +29,21 @@ namespace WateringCan.Scripts
         {
             if (!activeWaterParticles.isPlaying && IsAtPouringAngle())
             {
+                print("startwatering");
                 StartWaterParticles();
+                return;
             }
 
             if (!activeWaterParticles.isPlaying ||
-                !IsAtPouringAngle()) return;
+                IsAtPouringAngle()) return;
+            print("Stop");
             StopWaterParticles();
         }
 
         private bool IsAtPouringAngle()
         {
-            return gameObject.transform.rotation.eulerAngles.x > minPouringAngle &&
-                   gameObject.transform.rotation.eulerAngles.x < maxPouringAngle;
+            return gameObject.transform.rotation.eulerAngles.x >= minPouringAngle &&
+                   gameObject.transform.rotation.eulerAngles.x <= maxPouringAngle;
         }
     }
 }

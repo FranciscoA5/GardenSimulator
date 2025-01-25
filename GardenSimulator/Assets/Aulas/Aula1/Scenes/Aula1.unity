@@ -11840,12 +11840,20 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 539355844, guid: f4fa59e629a52984dbd2b1b16c82ab49, type: 3}
+      propertyPath: CollisionModule.type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 539355844, guid: f4fa59e629a52984dbd2b1b16c82ab49, type: 3}
       propertyPath: InitialModule.size3D
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 539355844, guid: f4fa59e629a52984dbd2b1b16c82ab49, type: 3}
       propertyPath: EmissionModule.enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 539355844, guid: f4fa59e629a52984dbd2b1b16c82ab49, type: 3}
+      propertyPath: CollisionModule.enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 539355844, guid: f4fa59e629a52984dbd2b1b16c82ab49, type: 3}
       propertyPath: InitialModule.maxNumParticles
@@ -11987,6 +11995,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1293010856, guid: f4fa59e629a52984dbd2b1b16c82ab49, type: 3}
+      propertyPath: CollisionModule.type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293010856, guid: f4fa59e629a52984dbd2b1b16c82ab49, type: 3}
+      propertyPath: CollisionModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1766088903551917784, guid: f4fa59e629a52984dbd2b1b16c82ab49, type: 3}
       propertyPath: m_Name
       value: Watering Can
@@ -12033,6 +12049,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1766088903551917790, guid: f4fa59e629a52984dbd2b1b16c82ab49, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1766088904799725577, guid: f4fa59e629a52984dbd2b1b16c82ab49, type: 3}
+      propertyPath: CollisionModule.type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1766088904799725577, guid: f4fa59e629a52984dbd2b1b16c82ab49, type: 3}
+      propertyPath: CollisionModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1766088904799725577, guid: f4fa59e629a52984dbd2b1b16c82ab49, type: 3}
+      propertyPath: CollisionModule.collisionMessages
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1766088904799725577, guid: f4fa59e629a52984dbd2b1b16c82ab49, type: 3}
+      propertyPath: CollisionModule.m_Planes.Array.size
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1766088904799725588, guid: f4fa59e629a52984dbd2b1b16c82ab49, type: 3}
