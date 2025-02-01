@@ -7,17 +7,19 @@ TagManager:
   - Anchor
   - Water
   - PinchPoint
+  - Plant
+  - Seed
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Plant
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Mesa
+  - Player
+  - Seed
+  - RunCollider
   - 
   - 
   - 

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8878009245263531241}
   - component: {fileID: 6666368705763142562}
   - component: {fileID: 992542466264063486}
+  - component: {fileID: 6625748473024397120}
   m_Layer: 0
   m_Name: SunFlower
   m_TagString: Plant
@@ -28,8 +29,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 916294236219275284}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.705421, y: -11.748955, z: 0.525856}
-  m_LocalScale: {x: 0.29996, y: 0.29996, z: 0.29996}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2933022210973651513}
@@ -61,7 +62,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 916294236219275284}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.5, y: 2, z: 0.41}
@@ -100,6 +101,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 3
+  vase: {fileID: 0}
+  cokePrefab: {fileID: 0}
+  sunFlowerPrefab: {fileID: 0}
+  lollyPopPrefab: {fileID: 0}
+--- !u!114 &6625748473024397120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 916294236219275284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdba7a9b0c0d464aba736957e7cfb633, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  duration: 0.5
 --- !u!1 &8637376774925181810
 GameObject:
   m_ObjectHideFlags: 0

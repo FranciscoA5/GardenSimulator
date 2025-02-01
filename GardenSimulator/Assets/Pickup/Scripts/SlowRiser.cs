@@ -7,17 +7,18 @@ namespace Pickup.Scripts
         [SerializeField] private float speed = 1.0f;
         [SerializeField] private float duration = 0.5f;
 
-        private Animator _animator;
+
+        private Collider collider;
         private float _timer;
 
         private void Start()
         {
-            _animator = GetComponent<Animator>();
+            collider = GetComponent<Collider>();
         }
 
-        private void OnTriggerEnter(Collider other)
+        private void OnParticleCollision(GameObject other)
         {
-            if (!other.CompareTag("Water")) return;
+            print("water collision");
 
             transform.position += Vector3.up * speed * Time.deltaTime;
             _timer += Time.deltaTime;
@@ -30,7 +31,7 @@ namespace Pickup.Scripts
 
         private void OnDisable()
         {
-            _animator.Play("PlantAnim");
+            collider.isTrigger = true;
         }
     }
 }

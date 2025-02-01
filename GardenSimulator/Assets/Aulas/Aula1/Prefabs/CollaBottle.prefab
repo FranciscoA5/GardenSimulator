@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 381244130833492655}
   - component: {fileID: 8704969461571753930}
   - component: {fileID: 3062788251838727112}
+  - component: {fileID: 1959882527329668553}
   m_Layer: 0
   m_Name: CollaBottle
   m_TagString: Plant
@@ -148,8 +149,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8254976179140708634}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.705421, y: -11.748955, z: 0.525856}
-  m_LocalScale: {x: 0.29996, y: 0.29996, z: 0.29996}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7404331571709153076}
@@ -165,7 +166,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8254976179140708634}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.5, y: 2, z: 0.41}
@@ -220,6 +221,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 3
+  vase: {fileID: 0}
+  cokePrefab: {fileID: 0}
+  sunFlowerPrefab: {fileID: 0}
+  lollyPopPrefab: {fileID: 0}
+--- !u!114 &1959882527329668553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8254976179140708634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdba7a9b0c0d464aba736957e7cfb633, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  duration: 0.5
 --- !u!1001 &7010909626037332191
 PrefabInstance:
   m_ObjectHideFlags: 0
