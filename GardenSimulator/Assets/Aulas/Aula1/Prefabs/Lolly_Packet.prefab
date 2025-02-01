@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 7317749261297416457}
   - component: {fileID: 8591451734945443875}
   - component: {fileID: 6170469603230288101}
+  - component: {fileID: 1899968057021377271}
   m_Layer: 0
   m_Name: Lolly_Packet
-  m_TagString: Untagged
+  m_TagString: Seed
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -64,6 +65,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.83, y: 0.77, z: 0.46}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1899968057021377271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684171942986609677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180029a8bd8d97a478024d51ba5294cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 1
 --- !u!1 &9027422381294954608
 GameObject:
   m_ObjectHideFlags: 0
