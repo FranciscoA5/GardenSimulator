@@ -6,24 +6,22 @@ namespace Pickup.Scripts
     {
         [SerializeField] private float speed = 1.0f;
         [SerializeField] private float duration = 0.5f;
-        [SerializeField] private float popStrength = 1.0f;
 
-        private Rigidbody _rb;
+        private Animator _animator;
         private float _timer;
 
         private void Start()
         {
-            _rb = GetComponent<Rigidbody>();
-            _rb.useGravity = false;
+            _animator = GetComponent<Animator>();
         }
 
         private void OnTriggerEnter(Collider other)
         {
             if (!other.CompareTag("Water")) return;
-            
-            _rb.transform.position += Vector3.up * speed * Time.deltaTime;
+
+            transform.position += Vector3.up * speed * Time.deltaTime;
             _timer += Time.deltaTime;
-            
+
             if (_timer >= duration)
             {
                 Destroy(this);
@@ -32,7 +30,7 @@ namespace Pickup.Scripts
 
         private void OnDisable()
         {
-            _rb.AddForce(Vector3.up * popStrength, ForceMode.Impulse);
+            _animator.Play("PlantAnim");
         }
     }
 }
