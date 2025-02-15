@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    float speed = 15f;
+    float speed = 30f;
     //float velocity = 0f;
     [SerializeField] GameObject player, centerEyeTracker;
 

@@ -1,18 +1,22 @@
 using Oculus.Interaction.DebugTree;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
     public GameState gameState;
     public static GameController gameController;
-    [SerializeField] GameObject runTrigger;
+    [SerializeField] GameObject runTrigger, vase;
+
+    [SerializeField] TMP_Text score, highScoreText, timer;
 
     public int points = 0;
     private int highScore = 0;
 
-    float time = 120f;
+    float time = 300f;
 
     void Start()
     {
@@ -29,9 +33,13 @@ public class GameController : MonoBehaviour
             {
                 if (points > highScore) highScore = points;
                 points = 0;
-                time = 120f;
+                time = 300f;
                 UpdateGameState(GameState.EndGame);
             }//End Game Logic
+
+            score.text = "Score: " + points.ToString();
+            highScoreText.text ="HighScore: " + highScore.ToString();
+            timer.text = "Timer: " + Mathf.Ceil(time).ToString();
         }
         
     }
@@ -43,10 +51,15 @@ public class GameController : MonoBehaviour
         switch (gameState) 
         {
             case GameState.Watering:
-                runTrigger.SetActive(false);
+                //runTrigger.SetActive(false);
                 break;
             case GameState.Disposing:
-                runTrigger.SetActive(true);
+                //runTrigger.SetActive(true);
+                break;
+            case GameState.EndGame:
+                GameObject go = vase.transform.GetChild(1).gameObject;
+                Destroy(go);
+                UpdateGameState(GameState.GetSeed);
                 break;
             default:
                 break;
